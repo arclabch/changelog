@@ -30,7 +30,7 @@ func main() {
 
 	// Check if the version is properly set
 	if version == "unknown" {
-		log.Fatal(errors.New("Please follow the instructions in README to build this software."))
+		log.Fatal(errors.New("please follow the instructions in README to build this software"))
 		os.Exit(1)
 	}
 	// Prepare the CLI app
