@@ -1,0 +1,10 @@
+# Compiled Object files, Static and Dyanmic libs (Shared Objects)
+*.o
+*.a
+*.so
+
+# Folders
+work
+
+# Binary outside of work folder
+changelog
