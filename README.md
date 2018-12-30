@@ -74,7 +74,7 @@ You must go to the source folder and checkout the version you want to compile. I
 
 ```sh
 $ cd $GOPATH/src/github.com/arclabch/changelog
-$ git checkout release/1.0.0
+$ git checkout release/1.0.1
 $ make
 ```
 
