@@ -72,8 +72,8 @@ lint:
 # Clean, vet, lint and build
 dev-build: clean vet lint build
 
-# Build and install
-install: build
+# Install
+install:
 	install -m 755 ${WORKDIR}/${OUT} ${DESTDIR}${PREFIX}/bin/
 
 # Uninstall
