@@ -4,7 +4,7 @@
 
 It can be used as part of scripts, both for adding and viewing. For example, as part of the `motd` to show the last changes done to a system, or as part of an orchestration system to keep track of the last actions.
 
-It was tested on FreeBSD, OpenBSD and Linux.
+`changelog` has been tested on FreeBSD, OpenBSD, Solaris and Debian GNU/Linux. It should run on other Unix-like systems as well.
 
 ## Usage
 
