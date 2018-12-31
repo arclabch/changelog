@@ -79,7 +79,7 @@ func getTerminalWidth() int {
 
 	// If real size is smaller than default width, return default width
 	width := size.Col()
-	if width < 40 {
+	if width < minWidth {
 		return minWidth
 	}
 
