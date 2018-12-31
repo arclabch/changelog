@@ -14,41 +14,64 @@ Run `changelog help` to see the general help, and `changelog help [show|add]` fo
 
 Only root can create entries. When using `sudo`/`doas`, `changelog` tries to guess the original user.
 
+`changelog add` doesn't return any output and exits with code 0 if add was successful.
+
 **Standard add:**
 
 ```sh
-# changelog add "The new changelog entry to add."
+$ sudo changelog add "The new changelog entry to add."
 ```
 
 **Add as another user:**
 
 ```sh
-# changelog add -u foobar "The new changelog entry to add."
+$ sudo changelog add -u foobar "The new changelog entry to add."
 ```
 
 **Add from stdin:**
 
 ```sh
-# echo "The new changelog entry to add." | changelog add -s
+$ sudo echo "The new changelog entry to add." | changelog add -s
 ```
 
 ### View the changelog
 
-**View all previous entries:**
+**View the 5 (default) previous entries:**
 
-```sh
+```
 $ changelog view
+2018-12-31T15:08  arclab  And another one with multiple lines.
+                          Like this.
+                          Because why not.
+2018-12-31T15:07  arclab  A long sentence that will wrap around depending on the terminal width
+                          while still maintaining alignment with the column. Isn't it nice?
+2018-12-31T15:06  àrçláb  An example UTF-8 message - ℓεετ sρεακ αηλοηε?
+2018-12-31T15:05  arclab  This is a simple sample message.
+```
+
+**View entries formated to a width of 80 columns:**
+
+```
+$ changelog view -w 80
+2018-12-31T15:08  arclab  And another one with multiple lines.
+                          Like this.
+                          Because why not.
+2018-12-31T15:07  arclab  A long sentence that will wrap around depending on
+                          the terminal width while still maintaining alignment
+                          with the column. Isn't it nice?
+2018-12-31T15:06  àrçláb  An example UTF-8 message - ℓεετ sρεακ αηλοηε?
+2018-12-31T15:05  arclab  This is a simple sample message.
 ```
 
 **View only the last 10 entries:**
 
-```sh
+```
 $ changelog view -l 10
 ```
 
 **View the entries done by a specific user:**
 
-```sh
+```
 $ changelog view -u foobar
 ```
 
@@ -74,25 +97,41 @@ You must go to the source folder and checkout the version you want to compile. I
 
 ```sh
 $ cd $GOPATH/src/github.com/arclabch/changelog
-$ git checkout release/1.0.1
+$ git checkout release/1.0.2
 $ make
 ```
 
 **Install it (as root):**
 
 ```sh
-# make install
+$ sudo make install
 ```
 
 **Remove it (as root):**
 
 ```sh
-# make uninstall
+$ sudo make uninstall
 ```
 
 (or simply delete `rm /usr[/local]/bin/changelog`.)
 
 Optional: delete `/var/log/changelog.db` to remove its database.
+
+## What's New
+
+**1.0.2**
+
+- Bug fix: on specific occasions a message could be displayed to width + 1.
+- Bug fix: minimum terminal width could be miscalculated.
+- Documentation: Added example outputs to this readme.
+
+**1.0.1**
+
+- Bug fix: error on `make install`.
+
+**1.0.0**
+
+- Initial release.
 
 ## License
 
