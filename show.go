@@ -178,7 +178,7 @@ func chunkByWords(s string, maxLength int) []string {
 	// Loop until we reach the end of the index
 	for index < l {
 		var toIndex int
-		toIndex = index + maxLength + 1
+		toIndex = index + maxLength
 
 		// If target toIndex is still below length of string, process
 		if l > toIndex {
