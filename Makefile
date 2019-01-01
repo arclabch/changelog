@@ -24,7 +24,7 @@ KERNEL := $(shell sh -c 'uname 2>/dev/null || echo Unknown')
 PLATFORM := $(shell sh -c 'uname -m 2>/dev/null || echo Unknown')
 
 # Set the build timestamp
-TIMESTAMP := $(shell sh -c 'date +"%Y-%m-%dT%k:%M%z"')
+TIMESTAMP := $(shell sh -c 'date +"%Y-%m-%dT%H:%M%z"')
 
 # If no prefix, set it
 ifeq ($(PREFIX),)
