@@ -121,7 +121,6 @@ Optional: delete `/var/log/changelog.db` to remove its database.
 
 **1.0.2**
 
-- Bug fix: on specific occasions a message could be displayed to width + 1.
 - Bug fix: minimum terminal width could be miscalculated.
 - Documentation: Added example outputs to this readme.
 
