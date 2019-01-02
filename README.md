@@ -97,7 +97,7 @@ You must go to the source folder and checkout the version you want to compile. I
 
 ```sh
 $ cd $GOPATH/src/github.com/arclabch/changelog
-$ git checkout release/1.0.2
+$ git checkout release/1.0.3
 $ make
 ```
 
@@ -118,6 +118,12 @@ $ sudo make uninstall
 Optional: delete `/var/log/changelog.db` to remove its database.
 
 ## What's New
+
+**1.0.3**
+
+- Bug fix: minimum terminal width calculation.
+- Bug fix: build timestamp format correction.
+- Documentation: Tested on NetBSD.
 
 **1.0.2**
 
